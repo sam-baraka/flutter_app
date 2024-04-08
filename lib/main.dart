@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/cats_page.dart';
 import 'package:flutter_app/cubits/counter_cubit.dart';
+import 'package:flutter_app/cubits/get_cats_cubit/get_cats_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(create: (context) => CounterCubit(0)),
+      BlocProvider(create: (context) => GetCatsCubit())
     ],
-    child: const MaterialApp(home: HomePage()),
+    child: const MaterialApp(home: CatsPage()),
   ));
 }
 
